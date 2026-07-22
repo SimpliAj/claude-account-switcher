@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Claude Account Switcher</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="" width="20" height="20" />
+    <h1>Claude Account Switcher</h1>
+  </header>
+
+  <div id="status" class="status hidden"></div>
+
+  <section class="add-account">
+    <input id="labelInput" type="text" placeholder="Label, e.g. Work" maxlength="40" />
+    <div class="add-row">
+      <button id="detectBtn" class="secondary" title="Try to read the email/org of the current login">Detect</button>
+      <button id="saveBtn" class="primary">Save current login</button>
+    </div>
+  </section>
+
+  <section>
+    <ul id="accountList"></ul>
+    <p id="emptyState" class="empty hidden">No saved accounts yet. Log into claude.ai, then click "Save current login".</p>
+  </section>
+
+  <footer>
+    <span>Cookies are stored locally in this browser only.</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

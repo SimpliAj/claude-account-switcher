@@ -1,0 +1,167 @@
+:root {
+  color-scheme: light dark;
+  --accent: #cc785c;
+  --bg: #ffffff;
+  --fg: #1f1c1a;
+  --muted: #6b6560;
+  --border: #e6e1dc;
+  --row-bg: #f7f4f1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #201d1b;
+    --fg: #f1ede8;
+    --muted: #a39c95;
+    --border: #3a3532;
+    --row-bg: #2a2624;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 320px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px 8px;
+}
+
+header h1 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.status {
+  margin: 0 14px 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.status.info { background: var(--row-bg); color: var(--muted); }
+.status.error { background: #fbe4e1; color: #a3341f; }
+.status.success { background: #e3f1e6; color: #1f6b34; }
+.hidden { display: none !important; }
+
+.add-account {
+  padding: 0 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+
+#labelInput {
+  width: 100%;
+  padding: 7px 9px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--row-bg);
+  color: var(--fg);
+  font-size: 13px;
+}
+#labelInput:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+
+.add-row { display: flex; gap: 6px; }
+
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button.primary { background: var(--accent); color: #fff; flex: 1; }
+button.primary:hover { filter: brightness(1.07); }
+button.secondary { background: var(--row-bg); color: var(--fg); border: 1px solid var(--border); }
+button.secondary:hover { background: var(--border); }
+
+ul#accountList {
+  list-style: none;
+  margin: 0;
+  padding: 4px 8px 6px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+li.account-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 8px;
+  border-radius: 8px;
+}
+li.account-row:hover { background: var(--row-bg); }
+
+.account-info { flex: 1; min-width: 0; }
+.account-label {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.account-meta {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.current-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2fa84f;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  background: transparent;
+  padding: 4px 6px;
+  color: var(--muted);
+}
+.icon-btn:hover { background: var(--border); color: var(--fg); }
+
+.empty {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.rename-input {
+  flex: 1;
+  padding: 5px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--row-bg);
+  color: var(--fg);
+  font-size: 13px;
+}
+
+footer {
+  padding: 8px 14px 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+footer span {
+  font-size: 10px;
+  color: var(--muted);
+}
