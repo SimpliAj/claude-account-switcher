@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Claude Account Switcher</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="app-header">
+      <div class="brand">
+        <img src="icons/icon48.png" alt="" width="28" height="28" />
+        <div>
+          <h1>Claude Switcher</h1>
+          <p>Accounts and usage</p>
+        </div>
+      </div>
+    </header>
+
+    <div id="status" class="status hidden"></div>
+
+    <section class="usage-panel" aria-label="Usage summary">
+      <div class="section-head">
+        <h2>Claude Usage</h2>
+        <button id="refreshUsageBtn" class="icon-btn refresh-btn" title="Refresh usage">Refresh</button>
+      </div>
+      <div class="usage-grid">
+        <div class="usage-card">
+          <span class="usage-value" id="activeAccountValue">--</span>
+          <span class="usage-label">Session</span>
+        </div>
+        <div class="usage-card">
+          <span class="usage-value" id="savedAccountsValue">--</span>
+          <span class="usage-label">Weekly</span>
+        </div>
+        <div class="usage-card">
+          <span class="usage-value" id="storageUsageValue">--</span>
+          <span class="usage-label">Reset</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="add-account" aria-label="Save account">
+      <div class="section-head compact">
+        <h2>Save Login</h2>
+      </div>
+      <input id="labelInput" type="text" placeholder="Label, e.g. Work" maxlength="40" />
+      <div class="add-row">
+        <button id="detectBtn" class="secondary" title="Try to read the email/org of the current login">Detect</button>
+        <button id="saveBtn" class="primary">Save current login</button>
+      </div>
+    </section>
+
+    <section class="accounts-section" aria-label="Saved accounts">
+      <div class="section-head compact">
+        <h2>Saved Accounts</h2>
+      </div>
+      <ul id="accountList"></ul>
+      <p id="emptyState" class="empty hidden">No saved accounts yet. Log into claude.ai, then click "Save current login".</p>
+    </section>
+
+    <footer>
+      <span>Cookies are stored locally in this browser only.</span>
+    </footer>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
