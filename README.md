@@ -2,6 +2,9 @@
 
 A small Chrome extension for people who juggle multiple [claude.ai](https://claude.ai) accounts. It snapshots the browser cookies for a logged-in account and lets you swap between saved accounts with one click — no manual logout/login required.
 
+# Chrome Extension Download:
+https://chromewebstore.google.com/detail/claude-account-switcher/nipfdggnhjljnipjigkambojahmdjmpp?authuser=0&hl=de
+
 ## How it works
 
 Claude.ai (like most web apps) tracks your login via cookies on the `claude.ai` domain. This extension:
